@@ -1,3 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wish Video</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <h1 class="title">Happy Birthday! 🎉</h1>
+        <p>Wishing you all the happiness and success!</p>
+        <button id="surpriseBtn">Click for Surprise</button>
+    </div>
+    <canvas id="fireworksCanvas"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>
+
+/* styles.css */
+body {
+    margin: 0;
+    overflow: hidden;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.container {
+    position: relative;
+    color: white;
+}
+.title {
+    font-size: 3em;
+    animation: pulse 2s infinite alternate;
+}
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.2); opacity: 1; }
+}
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    animation: twinkle 5s infinite alternate;
+}
+@keyframes twinkle {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
 /* script.js */
 document.getElementById("surpriseBtn").addEventListener("click", function() {
     launchFireworks();
